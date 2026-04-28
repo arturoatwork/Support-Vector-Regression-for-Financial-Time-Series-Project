@@ -1,0 +1,51 @@
+# SVR Quantitative Finance Project — Configuration
+
+# Data
+ticker: "AAPL"
+start_date: "2015-01-01"
+end_date: "2024-12-31"
+interval: "1d"
+
+# Model (best params found by walk-forward CV)
+model:
+  kernel: "rbf"
+  C: 50
+  epsilon: 0.0009   # ~5% of daily return std (~0.018)
+  gamma: "scale"
+
+# Hyperparameter search grid
+tuning:
+  C_range: [1, 5, 10, 50]
+  epsilon_fractions: [0.01, 0.03, 0.05]   # multiplied by std(y) at fit time
+  gamma_range: ["scale"]
+  cv_splits: 5
+  scoring: "directional_accuracy"          # not MSE — DA is the relevant metric
+
+# Backtesting
+backtest:
+  train_window: 504       # 2 years
+  test_window: 63         # 1 quarter
+  step_size: 63
+  transaction_cost: 0.001
+  slippage: 0.0005
+
+# Feature engineering
+features:
+  n_features_selected: 20   # top-20 by mutual information
+  rsi_period: 14
+  bb_period: 20
+  atr_period: 14
+  momentum_period: 10
+  volatility_period: 20
+  n_lags: 5
+
+# Long-biased overlay strategy
+overlay:
+  bull_position: 1.5
+  bear_position: 0.3
+  base_position: 1.0
+  confidence_threshold: 0.65
+
+# Logging
+logging:
+  level: "WARNING"

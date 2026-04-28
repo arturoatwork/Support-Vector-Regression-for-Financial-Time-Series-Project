@@ -1,0 +1,13 @@
+,Pure SVR L/S,SVR Long-Biased,Buy & Hold
+Ann. Return,-5.40%,23.83%,30.19%
+Ann. Volatility,10.44%,32.05%,29.92%
+Sharpe Ratio,-0.5169,0.7437,1.0091
+Sortino Ratio,-0.4260,0.7410,1.0098
+Calmar Ratio,-0.1323,0.6188,0.7839
+Max Drawdown,-40.78%,-38.52%,-38.52%
+Total Return,-35.96%,305.81%,587.43%
+Win Rate,22.28%,52.12%,53.54%
+Win/Loss Ratio,1.442,1.054,1.035
+"VaR  (5%,daily)",-1.107%,-3.106%,-2.897%
+"CVaR (5%,daily)",-1.744%,-4.837%,-4.280%
+Kelly (1/4),0.000,0.017,0.022
